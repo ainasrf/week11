@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>Pluvi:</title>
+
+	<style>
+	
+	
+	body{background: black;}
+
+	.navbar {
+ 		position: fixed;
+  		top: 0;
+  		left: 50%;
+  		transform: translateX(-50%);
+  		z-index: 9999;
+
+  		max-width: 1280px;
+  		width: 100%;
+  		height: 100px;
+  		background: #000;
+
+  		display: flex;
+  		align-items: center;
+  		justify-content: space-between;
+  		padding: 0 90px;
+  		border-bottom: 1px solid #777;
+	}
+	.logo {
+  		color: white;
+  		font-size: 36px;
+  		font-weight: 700;
+	}
+
+	.nav-links {
+  		list-style: none;
+  		display: flex;
+  		gap: 60px;
+	}	
+
+	.nav-links a {
+  		color: #cfcfcf;
+  		text-decoration: none;
+  		font-size: 20px;
+  		font-weight: 400;
+	}
+
+	.nav-links a:hover {
+  		color: white;
+	}
+
+	.hero {
+		display: flex;
+  		justify-content: center;
+  		padding: 200px 0;
+  		background: black;
+	}
+
+	.video-card {
+ 		position: relative;
+ 		width: 1100px;
+  		height: 500px;
+  		border-radius: 40px;
+  		overflow: hidden;
+	}
+
+	.video-card video {
+  		width: 100%;
+  		height: 100%;
+  		object-fit: cover;
+	}
+
+
+	.overlay {
+  		position: absolute;
+  		width: 100%;
+  		height: 100%;
+  		background: rgba(0,0,0,0.35);
+  		top: 0;
+  		left: 0;
+	}
+
+
+	.text-left {
+  		position: absolute;
+  		bottom: 60px;
+  		left: 80px;
+  		color: white;
+  		font-size: 35px;
+  		font-weight: 500;
+	}
+
+
+	.text-right {
+  		position: absolute;
+  		filter: blur(1px);
+  		top: -80px;
+  		right: 60px;
+  		color: white;
+  		font-size: 80px;
+  		font-weight: 700;
+	}
+
+	.story-section {
+  		background: #000;
+  		color: white;
+  		width: 1000px;
+  		margin: 0 auto;
+  		min-height: 100vh;
+  		padding: 70px 0;
+  		font-family: Arial, sans-serif;
+	}
+
+	.top-text {
+  		text-align: center;
+  		font-size: 30px;
+  		line-height: 1.2;
+  		margin-bottom: 180px;
+	}
+
+	.image-text {
+  		position: relative;
+  		width: 100%;
+	}	
+
+	.image-text img {
+  		width: 1000px;
+  		height: 380px;
+  		object-fit: cover;
+  		display: block;
+	}
+
+	.side-text {
+  		position: absolute;
+  		right: 25px;
+  		top: 75px;
+  		font-size: 25px;
+  		line-height: 1.1;
+  		text-align: right;
+	}	
+
+	.meet-text {
+  		text-align: center;
+  		margin-top: 190px;
+	}
+
+	.meet-text p {
+  		font-size: 30px;
+  		margin-bottom: 25px;
+	}	
+
+	.meet-text h1 {
+  		font-size: 75px;
+  		line-height: 1.15;
+	}	
+
+
+	.shining{
+			width: 1000px;
+			height: auto;
+			display: block;
+			margin: 40px auto 0;
+	}		
+
+	
+	
+
+	.about-pluvi {
+  		display: flex;
+  		gap: 70px;
+  		padding: 170px 120px ;
+  		font-size: 30px;
+  		width: 600px;
+	}
+
+	.about-pluvi h3 {
+  		font-size: 35px;
+	}
+
+	.about-pluvi p {
+  		width: 600px;
+  		line-height: 1.2;
+  		font-size: 15px;
+  		padding-top: 30px;
+	}
+
+	.payung{
+		background: lightgrey;
+		height: 550px;
+
+
+	}
+
+	.machine-section {
+  		background: black;
+  		display: flex;
+  		justify-content: center;
+  		padding-top: 80px;
+	}
+
+	.machine-box {
+  		width: 100%;
+  		height: 450px;
+  		background: #d9d9d9;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		gap: 90px;
+	}
+
+	.machine-box img {
+  		width: 400px;
+	}
+
+	.machine-box h2 {
+  		font-size: 38px;
+  		color: #444;
+  		line-height: 1.2;
+  		font-family: Arial, sans-serif;
+	}
+
+
+
+/* ABOUT SECTION */
+
+	.about-section {
+		display: flex;
+  		position: relative;
+  		background: black;
+  		color: white;
+  		min-height: 850px;
+  		padding: 170px 120px;
+  		overflow: hidden;
+	}
+
+	.about-text h1 {
+  		font-size: 35px;
+		font-family: Arial, sans-serif;
+		margin-bottom: 35px;
+	}
+
+	.about-text p {
+		width: 470px;
+		font-size: 15px;
+		line-height: 1.5;
+		font-family: Arial, sans-serif;
+		padding-right: 80px;
+	}
+
+	.umbrella {
+		width: 500px;
+		height: auto;
+		object-fit: contain;
+		margin-left: auto;
+		margin-top: -350px;
+
+  
+	}
+
+	.how-section {
+		background: black;
+		color: white;
+		width: 1000px;
+		margin: 0 auto;
+		padding: 150px 0;
+		font-family: Arial, sans-serif;
+	}
+
+	.small-title {
+  		text-align: center;
+  		font-size: 28px;
+  		margin-bottom: 25px;
+	}
+
+	.main-title {
+  		text-align: center;
+  		font-size: 90px;
+  		line-height: 1.1;
+  		margin-bottom: 180px;
+	}
+
+
+/* STEPS */
+
+	.step {
+  		display: flex;
+  		align-items: center;
+  		justify-content: space-between;
+  		margin-bottom: 220px;
+	}
+
+	.step img {
+  		width: 450px;
+  		border-radius: 20px;
+  		object-fit: cover;
+	}
+
+	.step-left2 img {
+  		width: 800px;
+  		padding-top: 290px;
+	}
+
+
+	.step-text {
+  		width: 420px;
+	}
+
+	.step-text h2 {
+  		font-size: 45px;
+  		margin-bottom: 20px;
+	}	
+
+	.step-text p {
+  		font-size: 18px;
+  		line-height: 1.5;
+  		color: #d0d0d0;
+	}
+
+
+/* alternating layout */
+
+	.step-right {
+  		flex-direction: row;
+	}
+
+	.find-section {
+  		width: 100%;
+ 
+
+  		background: #dcdcdc;
+
+  		display: flex;
+  		justify-content: space-between;
+  		align-items: center;
+
+  		padding: 100px 1px;
+
+  		font-family: Arial, sans-serif;
+	}
+
+	.find-text h1 {
+  		font-size: 35px;
+  		color: black;
+  		margin-bottom: 40px;
+  		padding-left: 160px;
+
+
+	}
+
+	.find-text p {
+  		width: 420px;
+  		font-size: 15px;
+  		line-height: 1.4;
+  		color: #444;
+  		padding-left: 160px;
+
+	}
+
+	.map-image img {
+  		width: 380px;
+  		height: auto;
+  		object-fit: contain;
+  		padding-right: 180px;
+
+
+	}
+
+	.staydry-section {
+ 		position: relative;
+ 		height: 950px;
+  		background: black;
+  		overflow: hidden;
+  		color: white;
+  		font-family: Arial, sans-serif;
+	}
+
+	.staydry-text {
+ 		position: absolute;
+  		top: 58%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+  		text-align: center;
+	}
+
+	.staydry-text h1 {
+  		font-size: 95px;
+	}
+
+	.staydry-text p {
+  		font-size: 35px;
+	}
+
+
+/* floating people */
+
+	.float {
+  		position: absolute;
+  		object-fit: contain;
+	}
+
+	.img1 {
+		width: 170px;
+ 		top: 170px;
+  		left: 140px;
+	}
+
+	.img2 {
+  		width: 180px;
+  		top: 120px;
+  		left: 470px;
+	}
+
+	.img3 {
+  		width: 140px;
+  		top: 260px;
+  		right: 260px;
+	}
+
+	.img4 {
+  		width: 170px;
+  		bottom: 230px;
+  		left: 340px;
+	}
+
+	.img5 {
+ 		width: 170px;
+  		bottom: 160px;
+  		right: 120px;
+	}
+
+
+
+/* ACTUAL FOOTER */
+
+	.footer {
+  		background: black;
+  		border-top: 1px solid #444;
+
+  		display: flex;
+  		justify-content: space-between;
+  		align-items: flex-end;
+
+  		padding: 15px 90px 60px;
+
+  		color: white;
+  		font-family: Arial, sans-serif;
+	}
+
+	.footer-left h3 {
+  		font-size: 20px;
+  		margin-bottom: 15px;
+	}
+
+	.footer-left p {
+  		font-size: 10px;
+  		color: #bcbcbc;
+  		line-height: 1.5;
+	}
+
+	.footer-right p {
+  		font-size: 15px;
+  		font-weight: 600;
+	}
+
+
+
+
+</style>
+
+</head>
+<body>
+
+		<nav class="navbar">
+				<div class="logo">Pluvi:</div>
+
+		  <ul class="nav-links">
+		    <li><a href="#">About</a></li>
+		    <li><a href="#">How</a></li>
+		    <li><a href="#">Find us</a></li>
+		  </ul>
+				
+		</nav>
+
+<section class="hero">
+  		<div class="video-card">
+    
+    <video autoplay muted loop>
+      <source src="rainbg.mp4" type="video/mp4">
+    </video>
+
+    	<div class="overlay"></div>
+
+    	<div class="text-left">
+
+      		<p>Not yours,<br>but yours for now.</p>
+
+    	</div>
+
+    	<div class="text-right">
+
+      		<h1>Pluvi:</h1>
+
+    	</div>
+
+  		</div>
+</section>
+
+
+
+<section class="story-section">
+
+  			<p class="top-text">
+    		Have you ever had a bad<br>
+    		day and decided to take a<br>
+    		walk to feel better.....
+  			</p>
+
+  <div class="image-text">
+    <img src="alone.png" alt="Rainy street">
+
+    		<p class="side-text">
+      		But suddenly it started<br>
+      		raining and you don't<br>
+      		have an umbrella.
+    		</p>
+  </div>
+
+  <div class="meet-text">
+
+    		<p>Worry no more.</p>
+   			<h1>Meet<br>Pluvi: !</h1>
+
+   			<img src="shining.png" class="shining">
+
+
+  </div>
+
+  <div class="about-pluvi">
+
+    		<h3>Pluvi:</h3>
+    		<p>
+      			Pluvi is derived from the Latin word “pluvia”,
+     				which literally means rain. It is also the root for the
+      			term pluviometer, a device for measuring rainfall.
+    		</p>
+  </div>
+
+</section>
+
+<section class="machine-section">
+
+  <div class="machine-box">
+    <img src="payung.png" alt="Machine">
+
+    		<h2>
+     			Now everyone can have<br>
+      			a good day.
+    		</h2>
+
+  </div>
+
+</section>
+
+
+<section class="about-section">
+
+  <div class="about-text">
+
+    <h1>About Us</h1>
+
+    <p>
+      Pluvi: is an AI-powered rental station that turns a rainy day
+      into a moment of connection through a simple “take, use,
+      and leave” cycle.
+      <br><br>
+
+      When you scan to unlock an umbrella, you receive a supportive
+      message from a previous stranger like “Today will be okay”
+      to brighten your day.
+      <br><br>
+
+      It’s a seamless sharing system where the umbrella isn’t yours
+      to keep, but yours for now, allowing you to stay dry while
+      passing on a silent thread of kindness to the next person.
+    </p>
+  </div>
+
+  <img src="about.png" class="umbrella" alt="Umbrella">
+
+</section>
+
+<section class="how-section">
+
+  <p class="small-title">Now you must be thinking ....</p>
+  <h1 class="main-title">How to<br>use??</h1>
+
+
+  <!-- STEP 1 -->
+  	<div class="step step-left2">
+
+    <img src="scan.png" alt="Scan">
+
+    <div class="step-text">
+      <h2>Scan</h2>
+
+      <p>
+        Scan the qr code on the screen with your
+        cellphone to access and unlock the umbrella
+        station.
+      </p>
+    </div>
+
+  </div>
+
+
+
+  <!-- STEP 2 -->
+  <div class="step step-right">
+
+    <div class="step-text">
+      <h2>Use</h2>
+
+      <p>
+        Take one and don’t forget to read the message
+        left by other user.
+        <br><br>
+
+        “Keep doing what you're doing!”
+        <br><br>
+
+        And you’re all set!
+      </p>
+    </div>
+
+    <img src="take.png" alt="Use">
+
+  </div>
+
+
+
+  <!-- STEP 3 -->
+  <div class="step step-left">
+
+    <img src="message.png" alt="Return">
+
+    <div class="step-text">
+      <h2>Return</h2>
+
+      <p>
+        You're done with the umbrella??
+        <br><br>
+
+        Search up nearest Pluvi: station and return it.
+        Don’t forget to leave a message for the next
+        person. Make their day better!
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="find-section">
+
+  <div class="find-text">
+
+    <h1>Find Us</h1>
+
+    <p>
+      Search up Pluvi on your local website to
+      search for umbrellas near you.
+    </p>
+
+  </div>
+
+
+  <div class="map-image">
+    <img src="map.png" alt="Map">
+  </div>
+
+</section>
+
+<section class="staydry-section">
+
+  <!-- floating images -->
+  <img src="img1.png" class="float img1">
+  <img src="img2.png" class="float img2">
+  <img src="img3.png" class="float img3">
+  <img src="img4.png" class="float img4">
+  <img src="img5.png" class="float img5">
+
+  <div class="staydry-text">
+    <h1>Stay dry</h1>
+    <p>And happy.</p>
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="footer-left">
+    <h3>Pluvi:</h3>
+
+    <p>
+      Copyright © 2026 Aina. All rights reserved.
+      <br>
+      2026 SEOULTECH Web Interaction Design
+    </p>
+  </div>
+
+  <div class="footer-right">
+    <p>Stay dry with Pluvi:</p>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+</body>
+</html>
